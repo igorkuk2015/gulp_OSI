@@ -1,0 +1,238 @@
+{% from "./macros/form.html" import field, createHome, createMenu, createMenu2, createMenu3, createAbouttitle, createAbout, createNumber, createClient, createClientimg, createServicestitle, createServicesitem, createQuote,createTeamTitle, createTeamContent, createPortfolioTitle, createPortfolioMenu, createPortfolioContent, createPortfolioContent2, createContactTitle, createMenuTitle, createContactForm %}
+
+{% extends "./base.html" %}
+
+{% block content %}
+    <section class="section row headers section--blue">
+    {% set header_items = [{ title: "Roran.", content: "PSD TEMPLATE", text:"By LunarTemplates", urla:"www.lunartemplates.com", imag:"./img/Arrow.png", rbtext:"Free to download at lunartemplates.com"}]%}
+        {% for header in header_items %}
+
+        {{ createHome(header) }}
+
+        {% endfor %}
+    </section>
+    <section class="section row menu">
+        {% set menu_title = [{ title: "Roran", title2: "."}]%}
+        {% set menu_content = [{content: "Home", href: "#"},{content: "About", href: "#"},{content: "Services", href: "#"},{content: "Team", href: "#"},{content: "Portfolio", href: "#"},{content: "Contact", href: "#"}]%}
+        {% set menu_social = [{content: "./img/li.png", href: "#"},{content: "./img/pi.png", href: "#"},{content: "./img/ti.png", href: "#"},{content: "./img/fi.png", href: "#"}]%}
+        <div class="container">
+            <div class="row row--alignment_center">
+                {% for menu in menu_title %}
+
+                {{ createMenu(menu) }}
+
+                {% endfor %}
+
+                {% for menu in menu_content %}
+
+                {{ createMenu2(menu) }}
+
+                {% endfor %}
+
+                {% for menu in menu_social %}
+
+                {{ createMenu3(menu) }}
+
+                {% endfor %}
+            </div>
+        </div>
+        <hr class="line cols--12 line--gr">
+    </section>
+    <section class="section row about">
+        {% set about_title = [{ title: "About Roran", title2: ".", content:"Creative Studio", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. vulputate, vehicula nisi vitae, lobortis ante. Praesent sodales iaculis ultricies"}]%}
+        {% set about_content = [{title: "Some fancy", title2: "colors", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at purus vulputate, vehicula nisi vitae, lobortis ante.", img:"./img/ab_ic1.png"},{title: "Enough coffee", title2: "breaks", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at purus vulputate, vehicula nisi vitae, lobortis ante.", img:"./img/ab_ic2.png"},{title: "A little bit of", title2: "magic", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at purus vulputate, vehicula nisi vitae, lobortis ante.", img:"./img/ab_ic3.png"}]%}
+        <div class="container">
+            {% for about in about_title %}
+
+            {{ createAbouttitle(about) }}
+
+            {% endfor %}
+            <div class="row">
+                {% for aboutc in about_content %}
+
+                {{ createAbout(aboutc) }}
+
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="section numbers row section--grey">
+        <div class="container">
+            {% set numbers = [{ image: "./img/ab_ic2.png", title: "1085", text: "Empty cups "},{ image: "./img/numb_ic.png", title: "102", text: "Happy clients"},{ image: "./img/numb_ic2.png", title: "25", text: "BBQ meetings"},{ image: "./img/numb_ic3.png", title: "29", text: "Cocktail parties"}]%}
+            <div class="row">
+                {% for number in numbers %}
+
+                {{ createNumber(number) }}
+
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="section client row section--blue ">
+        {% set clients_title = [{ title: "Some of our clients", text: "We  ", text2: "  every single one", img:"./img/heart.png"}]%}
+        {% set clients_img = [{img:"./img/Mashable.png"},{img:"./img/jQuery.png"},{img:"./img/LunarTemplates.png"},{img:"./img/VHDesign.png"}]%}
+        <div class="container">
+            <div class="clients">
+                {% for client in clients_title %}
+
+                {{ createClient(client) }}
+
+                {% endfor %}
+                <div class="row row--justification_around row--alignment_center">
+                    {% for client in clients_img %}
+
+                    {{ createClientimg(client) }}
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section services row">
+        {% set services_title = [{ title: "Our Services", text: "With Passion & Experience"}]%}
+        {% set items = [{ title: "Dictum tincidunt ", title2: 'diam', content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at purus vulputate, vehicula nisi vitae, lobortis ante.", image: "./img/Icon.png"},{ title: "Dictum tincidunt ", title2: 'diam', content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at purus vulputate, vehicula nisi vitae, lobortis ante.", image: "./img/ser_ic2.png"}, { title: "Dictum tincidunt ", title2: 'diam', content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at purus vulputate, vehicula nisi vitae, lobortis ante.", image: "./img/ser_ic3.png"}, { title: "Dictum tincidunt ", title2: 'diam', content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at purus vulputate, vehicula nisi vitae, lobortis ante.", image: "./img/ser_ic4.png"},{ title: "Dictum tincidunt ", title2: 'diam', content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at purus vulputate, vehicula nisi vitae, lobortis ante.", image: "./img/ser_ic5.png"}, { title: "Dictum tincidunt ", title2: 'diam', content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at purus vulputate, vehicula nisi vitae, lobortis ante.", image: "./img/ser_ic6.png"}]%}
+        <div class="container">
+            <div class="services__title">
+                {% for services in services_title %}
+
+                {{ createServicestitle(services) }}
+
+                {% endfor %}
+            </div>
+            <div class="services__card">
+                <div class="row ">
+                    {% for item in items %}
+
+                    {{ createServicesitem(item) }}
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section comments row section--blue">
+        {% set quote_t = [{ content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at purus vulputate, vehicula nisi vitae, lobortis ante. Praesent sodales iaculis ultricies. Vestibulum et tristique nisl, sed volutpat ante.", text: "Jonathan Doe"}]%}
+        <div class="container">
+            {% for quote in quote_t %}
+
+            {{ createQuote(quote) }}
+
+            {% endfor %}
+        </div>
+    </section>
+    <section class="section team">
+        {% set team_title = [{ title: "Meet...the team", text: "They are really nice!"}]%}
+        {% set team_member = [{ title: "Jonathan Doe", text: "Creative Director", imgtw:"./img/ti.png", imgfc:"./img/fi.png"},{ title: "Jonathan Doe", text: "Creative Director", imgtw:"./img/ti.png", imgfc:"./img/fi.png"},{ title: "Jonathan Doe", text: "Creative Director", imgtw:"./img/ti.png", imgfc:"./img/fi.png"}]%}
+        <div class="container">
+            {% for team in team_title %}
+
+            {{ createTeamTitle(team) }}
+
+            {% endfor %}
+            <div class="row row--justification_center">
+                <div class="section--grey member__box"></div>
+            </div>
+        </div>
+        <div class="section section--grey">
+            <div class="container">
+                <div class="row row--justification_between">
+                    {% for team in team_member %}
+
+                    {{ createTeamContent(team) }}
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section portfolio row">
+        {% set portfolio_title = [{ title: "Portfolio", text: "This is what we’ve been working on"}]%}
+        {% set portfolio_menu = [{content: "Web", href: "#"},{content: "Digital Art ", href: "#"},{content: "Illustrations ", href: "#"},{content: "Branding", href: "#"},{content: "All", href: "#"}]%}
+        {% set portfolio_content = [{content:"",title:"Free Website PSD", text:"Web", img:"./img/por_ic.png"},{content:"",title:"Free Website PSD", text:"Web", img:"./img/por_ic.png"}] %}
+        <div class="container">
+            <div class="services__title">
+                {% for portfolio in portfolio_title %}
+
+                {{ createPortfolioTitle(portfolio) }}
+
+                {% endfor %}
+                <div class="portfolio_menu row row--justification_center text--center cell cols cols--10">
+                {% for portfolio in portfolio_menu %}
+
+                {{ createPortfolioMenu(portfolio) }}
+
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="container container--xl">
+            <div class="row row--justification_center">
+                {% for portfolio in portfolio_content %}
+
+                {{ createPortfolioContent(portfolio) }}
+
+                {% endfor %}
+
+                {% for portfolio in portfolio_content %}
+
+                {{ createPortfolioContent2(portfolio) }}
+
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="footer section">
+        {% set contact_title = [{ title: "Contact", text: "We would really love to hear from you!"}]%}
+        {% set contact_form = [{title: "Contactinfo", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at purus vulputate.", text2:"Vehicula nisi vitae, lobortis ante. Praesent sodales iaculis ultricies."},{img: "./img/fot_ic.png", titles:"Rue de Halle 245", titles2:"1000 Brussels"},{img: "./img/fot_ic2.png", titles:"03 123 45 67", titles2:"0412 345 678"},{img: "./img/fot_ic3.png", titles:"info@roran.com",titles2:"question@roran.com"}] %}
+        <div class="container">
+            {% for contact in contact_title %}
+
+            {{ createContactTitle(contact) }}
+
+            {% endfor %}
+        </div>
+        <div class="contact_box section section--blue">
+            {% for menu in menu_title %}
+
+            {{ createMenuTitle(menu) }}
+
+            {% endfor %}
+        </div>
+        <div class="section section--grey">
+            <div class="container container--md">
+                <div class="contact cols--12 row row--justification_around">
+                    <form class="cols--7">
+                        <div class="form row row--column">
+                            <div class="lab row row--column">
+                                <label class="label caption caption--color_blue caption--color_grey" for="name">Your name</label>
+                                <input type="text" class="input" id="name">
+                            </div>
+                            <div class="lab row row--column">
+                                <label class="label caption caption--color_blue caption--color_grey" for="email">Your email</label>
+                                <input type="email" class="input" id="email">
+                            </div>
+                            <div class="lab row row--column">
+                                <label class="label caption caption--color_blue caption--color_grey" for="subject">Subject</label>
+                                <input type="email" class="input" id="subject">
+                            </div>
+                            <div class="lab row row--column">
+                                <label class="label caption caption--color_blue caption--color_grey" for="message">Message</label>
+                                <textarea class="input textarea" id="message"></textarea>
+                            </div>
+                            <input type="submit" class="button__consultation caption caption--color_blue caption--color_white" value="Send">
+                        </div>
+                    </form>
+                    <div class="cols--4">
+                        <div class="contact__info row row--column cols cols--12">
+                            {% for contact in contact_form %}
+
+                            {{ createContactForm(contact) }}
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}s

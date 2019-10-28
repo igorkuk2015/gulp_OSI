@@ -1,0 +1,237 @@
+{% macro field(name, value='', type='text') %}
+<div class="field">
+  <input type="{{ type }}" name="{{ name }}"
+         value="{{ value | escape }}" />
+</div>
+{% endmacro %}
+
+{% macro createHome(header) %}
+<div class="container ">
+  <div class="home row">
+    <div class="cell cols--8">
+      <h1 class="caption caption--color_white caption--size_xl font_extra"> {{ header.title }} </h1>
+      <div class="caption caption--color_white caption--size_xs font_regular"> {{ header.content }} </div>
+      <div class="caption caption--color_white caption--size_m font_regular"> {{ header.text }} </div>
+      <div class="line--pad"><hr class="cell cols--4 "></div>
+      <div class="caption caption--color_white caption--size_sm font_regular"> {{ header.urla }} </div>
+    </div>
+    <div class="cell cols--4">
+      <div class="rbtext  caption caption--size_sm caption--color_white font_regular">{{header.rbtext}}</div>
+    </div>
+    <div class="strelki cell row  row--column ">
+      <img src="{{ header.imag }} " alt="">
+      <img src="{{ header.imag }} " alt="">
+      <img src="{{ header.imag }} " alt="">
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro createMenu(menu) %}
+  <div class="menu__title  cell cols cols--3 ">
+    <h3 class="caption  caption--color_black caption--size_md font_extra">{{menu.title}} <span class="caption caption--color_blue caption--size_md">{{menu.title2}}</span></h3>
+  </div>
+{% endmacro %}
+
+{% macro createMenu2(menu) %}
+  <div class="cell cols cols--1">
+    <div class="caption caption--size_lsm font_regular"><a href="{{menu.href}}">{{menu.content}}</a></div>
+  </div>
+{% endmacro %}
+
+{% macro createMenu3(menu) %}
+  <div class="cell cols">
+    <div class="caption"><a href="{{menu.href}}"><img src="{{menu.content}}" alt=""></a></div>
+  </div>
+{% endmacro %}
+
+{% macro createAbouttitle(about) %}
+  <div class="about__title  font_regular row row--column row--justification_center row--alignment_center">
+    <h2 class="caption font_extra caption--color_black caption--size_xsl">{{about.title}} <span class="caption caption--color_blue caption--size_xsl">{{about.title2}}</span></h2>
+    <h3 class="caption caption--color_grey caption--size_md">{{about.content}}</h3>
+    <div class="line--pad cols cols--2"><hr class="cell line--gr"></div>
+    <p class="text2 caption caption--color_lowgrey caption--size_sm cols cols--7 text--center">{{about.text}}</p>
+  </div>
+{% endmacro %}
+
+{% macro createAbout(aboutc) %}
+  <div class="cell cols--4">
+    <div class="card">
+      <div class="row">
+        <div class="cell row row--justification_center row--alignment_center cols cols--12">
+          <div class="cell cols"><img src=" {{aboutc.img}} " alt=""></div>
+          <div class="aboutc__title caption caption--color_black caption--size_sm font_regular">{{aboutc.title}} <span class="caption caption--color_blue caption--size_sm">{{aboutc.title2}}</span></div>
+          <div><p class="caption caption--color_grey caption--size_lsm text--center font_regular">{{aboutc.text}}</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro createNumber(number) %}
+  <div class="number">
+    <div class="row line--pad row--alignment_center row--justification_between">
+      <div class="cell cols cols--3">
+        <img src={{ number.image }} alt="">
+      </div>
+      <div class="cell cols cols--8">
+        <h2 class="caption caption--color_blue caption--size_xs font_extra"> {{ number.title }} <span class="caption caption--color_blue">{{ item.title2 }}</span></h2>
+        <p class="caption caption--color_grey text--center caption--size_lsm font_regular"> {{ number.text }}</p>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro createClient(client) %}
+  <div class="clients__title row row--column row--alignment_center row--justification_center">
+    <h2 class="caption caption--color_white caption--size_lmd font_extra">{{client.title}}</h2>
+    <div><p class="caption caption--color_white caption--size_xsm font_regular">{{client.text}}<img src=" {{ client.img }} " alt="">{{client.text2}}</p></div>
+    <div class="line--pad cols--2"><hr></div>
+  </div>
+{% endmacro %}
+
+{% macro createClientimg(client) %}
+  <div><img src="{{client.img}}" alt=""></div>
+{% endmacro %}
+
+{% macro createServicestitle(services) %}
+  <div class="clients__title row row--column row--alignment_center row--justification_center">
+    <h2 class="caption caption--color_black caption--size_lmd font_extra">{{services.title}}</h2>
+    <div><p class="caption line--pad caption--color_lowgrey caption--size_xsm font_regular">{{services.text}}</p></div>
+    <div class="line--gr cols--2"><hr></div>
+  </div>
+{% endmacro %}
+
+{% macro createServicesitem(item) %}
+  <div class="cell cols--4">
+    <div class="cards">
+      <div class="row">
+        <div class="cell cols cols--3">
+          <img src={{ item.image }} alt="">
+        </div>
+        <div class="cell cols cols--9">
+          <h2 class="cards__title caption caption--color_black caption--size_sm font_regular"> {{ item.title }} <span class="caption caption--color_blue">{{ item.title2 }}</span></h2>
+          <div class="line--gr cols--4"><hr></div>
+          <p class="cards__text caption caption--color_lowgrey caption--size_sm font_regular"> {{ item.content }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro createQuote(quote) %}
+  <div class="quote row row--justification_center">
+    <div class="cols cell cols--10">
+      <div class="row row--column row--alignment_center row--justification_center">
+        <h2 class="caption caption--color_white text--center caption--size_xsm font_regular">{{quote.content}}</h2>
+        <div class="line--gr line--pad cols--2"><hr></div>
+        <div><p class="caption caption--color_white caption--size_sm font_regular">{{quote.text}}</p></div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro createTeamTitle(team) %}
+  <div class="services__title">
+    <div class="row row--column row--alignment_center row--justification_center">
+      <h2 class="caption caption--color_black caption--size_lmd font_extra">{{team.title}}</h2>
+      <div><p class="caption line--pad caption--color_lowgrey caption--size_xsm font_regular">{{team.text}}</p></div>
+      <div class="line--gr cols--2"><hr></div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro createTeamContent(team) %}
+  <div class="member">
+    <div class="member__bg caption section--blue row row--alignment_center row--justification_end row--column">
+      <div class="member__white row row--alignment_center row--justification_between">
+        <div class="row row--column menu__title ">
+          <h2 class="caption caption--color_black caption--size_sm font_regular">{{team.title}}</h2>
+          <div><p class="caption caption--color_lowgrey caption--size_lsm font_regular">{{team.text}}</p></div>
+        </div>
+        <div class="member__social row row--justification_between cols--4">
+          <div>
+            <img src="{{team.imgtw}}" alt="">
+          </div>
+          <div>
+            <img src="{{team.imgfc}}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro createPortfolioTitle(portfolio) %}
+  <div class="row row--column row--alignment_center row--justification_center">
+    <h2 class="caption caption--color_black caption--size_lmd font_extra">{{portfolio.title}}</h2>
+    <div><p class="caption line--pad caption--color_lowgrey caption--size_xsm font_regular">{{portfolio.text}}</p></div>
+    <div class="line--gr cols--2"><hr></div>
+  </div>
+{% endmacro %}
+
+{% macro createPortfolioMenu(portfolio) %}
+  <div class="cols cell cols--2 caption caption--size_sm font_regular"><a href="{{portfolio.href}}">{{portfolio.content}}</a></div>
+{% endmacro %}
+
+{% macro createPortfolioContent(portfolio) %}
+  <div class="portfolio__block ">
+    {{portfolio.content}}
+    <img src="{{portfolio.img}}" alt="">
+    <h3 class="cards font_regular">{{portfolio.title}}</h3>
+    <p class="font_regular">{{portfolio.text}}</p>
+  </div>
+  <div class="portfolio__blockL ">
+    {{portfolio.content}}
+    <img src="{{portfolio.img}}" alt="">
+    <h3 class="cards font_regular">{{portfolio.title}}</h3>
+    <p class="font_regular">{{portfolio.text}}</p>
+  </div>
+{% endmacro %}
+
+{% macro createPortfolioContent2(portfolio) %}
+  <div class="portfolio__blockL ">
+    {{portfolio.content}}
+    <img src="{{portfolio.img}}" alt="">
+    <h3 class="cards font_regular">{{portfolio.title}}</h3>
+    <p class="font_regular">{{portfolio.text}}</p>
+  </div>
+  <div class="portfolio__block ">
+    {{portfolio.content}}
+    <img src="{{portfolio.img}}" alt="">
+    <h3 class="cards font_regular">{{portfolio.title}}</h3>
+    <p class="font_regular">{{portfolio.text}}</p>
+  </div>
+{% endmacro %}
+
+{% macro createContactTitle(contact) %}
+  <div class="services__title">
+    <div class="row row--column row--alignment_center row--justification_center">
+      <h2 class="caption caption--color_black caption--size_lmd font_extra">{{contact.title}}</h2>
+      <div><p class="caption line--pad caption--color_lowgrey caption--size_xsm font_regular">{{contact.text}}</p></div>
+      <div class="line--gr cols--2"><hr></div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro createMenuTitle(menu) %}
+<div class="contact_roran row--column text--center row row--alignment_center row--justification_center">
+  <h3 class="caption caption--color_black caption--size_md font_extra">{{menu.title}} <span class="caption caption--color_blue caption--size_md">{{menu.title2}}</span></h3>
+  <div class="contact_roranbox"></div>
+</div>
+{% endmacro %}
+
+{% macro createContactForm(contact) %}
+  <div class="caption caption--color_black caption--size_xsm font_extra">{{contact.title}}</div>
+  <div class="cols cols--10 contactinfotext_pad  caption caption--color_grey caption--size_lsm font_regular">{{contact.text}}</div>
+  <div class="cols cols--10 caption caption--color_grey caption--size_lsm font_regular">{{contact.text2}}</div>
+  <div class="row  row--alignment_center row--justification_center">
+    <div class="cell cols cols--2">
+      <img src="{{contact.img}}" alt="">
+    </div>
+    <div class="cell cols cols--8">
+      <p class="caption caption--color_black caption--size_sm font_regular"> {{ contact.titles }}</p>
+      <p class="caption caption--color_black  caption--size_sm font_regular"> {{ contact.titles2 }}</p>
+    </div>
+  </div>
+{% endmacro %}
