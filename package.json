@@ -295,7 +295,7 @@
     "json-stable-stringify-without-jsonify": "^1.0.1",
     "jsonfile": "^3.0.1",
     "jsprim": "^1.4.1",
-    "kind-of": "^3.2.2",
+    "kind-of": "^6.0.3",
     "just-debounce": "^1.0.0",
     "last-run": "^1.1.1",
     "lazy-cache": "^1.0.4",
