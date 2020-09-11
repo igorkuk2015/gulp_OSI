@@ -566,7 +566,7 @@
     "xmlhttprequest-ssl": "^1.5.5",
     "y18n": "^3.2.1",
     "yargs": "^7.1.0",
-    "yargs-parser": "^4.2.1",
+    "yargs-parser": "^20.0.0",
     "yeast": "^0.1.2"
   }
 }
